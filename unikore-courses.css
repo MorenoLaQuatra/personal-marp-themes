@@ -1,0 +1,215 @@
+/* @theme unikore-courses */
+/* Author: Moreno La Quatra https://github.com/MorenoLaQuatra */
+@import "default";
+
+/* Base Theme */
+section {
+    font-size: 24px;
+    padding: 30px;
+    background: #ffffff;
+}
+
+/* Header/Footer */
+header, footer {
+    font-size: 0.6em;
+    color: #64748b;
+}
+
+/* Typography */
+h1 {
+    color: #1e40af;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h2 {
+    color: #1e4899;
+    font-size: 28px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+h3 {
+    color: #2d3748;
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* Lists and Text */
+ul, ol {
+    margin-left: 25px;
+    line-height: 1.5;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Components */
+.header {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.objectives {
+    background: #f0f9ff;
+    border-left: 4px solid #3b82f6;
+    padding: 15px 20px;
+}
+
+.definition {
+    background: #f0fdfa;
+    border-left: 4px solid #14b8a6;
+    padding: 15px 20px;
+}
+
+.example {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    padding: 15px 20px;
+}
+
+.important {
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+    padding: 15px 20px;
+}
+
+.note {
+    background: #fdf4ff;
+    border-left: 4px solid #c026d3;
+    padding: 15px 20px;
+}
+
+/* Images */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 85%;
+    border-radius: 8px;
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+/* Grids */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 20px 0;
+}
+
+/* ML/DL Components */
+.algorithm {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid #e2e8f0;
+}
+
+.model-architecture {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.metrics {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Speech/NLP */
+.spectrogram {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.attention-matrix {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+/* Database */
+.schema {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid #e2e8f0;
+}
+
+.query {
+    background: #f8fafc;
+    color: #1e293b;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid #e2e8f0;
+}
+
+/* References */
+.reference {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    border: 1px solid #e2e8f0;
+}
+
+.resources {
+    background: #f0f9ff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #bfdbfe;
+}
+
+/* Contact/Links */
+.contact {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background 0.2s;
+}
