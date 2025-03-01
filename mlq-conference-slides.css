@@ -20,12 +20,13 @@ section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 28px;
   padding: 40px;
-  background: var(--background);
+  background-color: var(--background);
   color: var(--text-main);
 }
 
 /* Header/Footer */
-header, footer {
+header,
+footer {
   font-size: 18px;
   color: var(--text-light);
   padding: 15px 40px;
@@ -75,7 +76,8 @@ em {
 }
 
 /* Content Elements */
-ul, ol { 
+ul, 
+ol { 
   margin-left: 30px;
   line-height: 1.6;
 }
@@ -111,9 +113,17 @@ a {
   margin-bottom: 20px;
 }
 
-.centered { text-align: center; }
-.right { text-align: right; }
-.left { text-align: left; }
+.centered {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
 
 .highlight { 
   color: var(--primary);
@@ -140,6 +150,8 @@ a {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .grid-3 {
@@ -147,6 +159,8 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .grid-4 {
@@ -154,6 +168,8 @@ a {
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   align-items: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .split-30-70 {
@@ -161,6 +177,8 @@ a {
   grid-template-columns: 30% 70%;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .split-70-30 {
@@ -168,6 +186,8 @@ a {
   grid-template-columns: 70% 30%;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .split-40-60 {
@@ -175,6 +195,8 @@ a {
   grid-template-columns: 40% 60%;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .split-60-40 {
@@ -182,6 +204,8 @@ a {
   grid-template-columns: 60% 40%;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .split-50-50 {
@@ -189,6 +213,8 @@ a {
   grid-template-columns: 50% 50%;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* Components */
@@ -210,6 +236,8 @@ a {
   grid-template-columns: auto 1fr;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .timeline-dot {
@@ -223,6 +251,7 @@ a {
   border: 1px solid var(--border-light);
   border-radius: 8px;
   padding: 15px;
+  margin: 15px 0;
 }
 
 .callout {
@@ -260,6 +289,15 @@ tr:nth-child(even) {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
 }
 
 .img-shadow img {
@@ -281,36 +319,37 @@ img {
   font-size: 0.8em;
   color: var(--text-light);
   margin-top: 5px;
+  display: block;
+  width: 100%;
 }
 
 /* Image Sizes */
 .img-small img {
   max-width: 200px;
+  margin: 0 auto;
 }
 
 .img-medium img {
   max-width: 400px;
+  margin: 0 auto;
 }
 
 .img-large img {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Image Positioning */
-.img-center {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
 .img-right {
   float: right;
   margin: 0 0 20px 20px;
+  max-width: 40%;
 }
 
 .img-left {
   float: left;
   margin: 0 20px 20px 0;
+  max-width: 40%;
 }
 
 /* Citations */
@@ -347,6 +386,7 @@ img {
 /* Section Divider */
 .section-divider {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -406,15 +446,52 @@ img {
 .mr-1 { margin-right: 10px; }
 .mr-2 { margin-right: 20px; }
 
-/* Color Variations */
-.bg-primary { background-color: var(--primary); color: white; }
-.bg-primary-light { background-color: var(--primary-light); color: white; }
-.bg-secondary { background-color: var(--secondary); color: white; }
-.bg-accent { background-color: var(--accent); color: var(--secondary); }
-.bg-light { background-color: var(--card-bg); }
+/* Color Variations for backgrounds */
+.bg-primary { 
+  background-color: var(--primary) !important; 
+  color: white !important; 
+}
 
-.text-primary { color: var(--primary); }
-.text-primary-light { color: var(--primary-light); }
-.text-secondary { color: var(--secondary); }
-.text-accent { color: var(--accent); }
-.text-light { color: var(--text-light); }
+.bg-primary-light { 
+  background-color: var(--primary-light) !important; 
+  color: white !important; 
+}
+
+.bg-secondary { 
+  background-color: var(--secondary) !important; 
+  color: white !important; 
+}
+
+.bg-accent { 
+  background-color: var(--accent) !important; 
+  color: var(--secondary) !important; 
+}
+
+.bg-light { 
+  background-color: var(--card-bg) !important; 
+}
+
+/* Color Variations for text */
+.text-primary { 
+  color: var(--primary) !important; 
+}
+
+.text-primary-light { 
+  color: var(--primary-light) !important; 
+}
+
+.text-secondary { 
+  color: var(--secondary) !important; 
+}
+
+.text-accent { 
+  color: var(--accent) !important; 
+}
+
+.text-light { 
+  color: var(--text-light) !important; 
+}
+
+.text-white {
+  color: white !important;
+}
