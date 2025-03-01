@@ -971,7 +971,7 @@ section.dark-theme {
 }
 
 .quote-box::before {
-  content: """;
+  content: "";
   font-size: 4em;
   font-family: Georgia, serif;
   color: rgba(var(--color-primary-rgb), 0.2);
