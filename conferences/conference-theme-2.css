@@ -1,5 +1,5 @@
-/* @theme mlq-conference-theme */
-/* Author: Moreno La Quatra - for academic conference paper presentations */
+/* @theme conference-theme */
+/* Author: For academic conference paper presentations */
 @import "default";
 
 /* Import Noto Sans font */
@@ -23,13 +23,13 @@
   --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Global styling */
+/* Global styling with larger font sizes */
 section {
   font-family: 'Noto Sans', sans-serif;
   background-color: var(--background);
   color: var(--dark-text);
   padding: 40px;
-  font-size: 24px;
+  font-size: 28px; /* Increased base font size */
   line-height: 1.5;
   letter-spacing: 0.015em;
 }
@@ -47,47 +47,47 @@ section.title {
 section.title h1 {
   font-weight: 700;
   color: var(--primary-blue);
-  font-size: 2.3em;
+  font-size: 2.5em; /* Larger title */
   margin-bottom: 0.2em;
 }
 
 section.title h2 {
   font-weight: 400;
   color: var(--primary-red);
-  font-size: 1.4em;
+  font-size: 1.6em; /* Larger subtitle */
   margin-top: 0;
-  max-width: 80%;
+  max-width: 85%;
 }
 
 section.title .author {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: var(--medium-text);
   margin-top: 1.5em;
 }
 
 section.title .affiliation {
-  font-size: 0.9em;
+  font-size: 1em;
   color: var(--light-text);
   margin-top: 0.5em;
 }
 
 section.title .conference {
   margin-top: 2em;
-  font-size: 0.9em;
+  font-size: 1em;
   color: var(--medium-text);
   font-weight: 600;
 }
 
 section.title .date {
   margin-top: 0.3em;
-  font-size: 0.9em;
+  font-size: 1em;
   color: var(--light-text);
 }
 
 /* Headers */
 h1 {
   color: var(--primary-blue);
-  font-size: 1.7em;
+  font-size: 1.8em; /* Larger heading */
   font-weight: 700;
   margin-top: 0.3em;
   margin-bottom: 0.5em;
@@ -95,7 +95,7 @@ h1 {
 
 h2 {
   color: var(--primary-blue);
-  font-size: 1.4em;
+  font-size: 1.5em; /* Larger subheading */
   font-weight: 600;
   margin-top: 0.5em;
   margin-bottom: 0.4em;
@@ -103,7 +103,7 @@ h2 {
 
 h3 {
   color: var(--secondary-blue);
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 600;
   margin-top: 0.5em;
   margin-bottom: 0.3em;
@@ -111,7 +111,7 @@ h3 {
 
 h4, h5, h6 {
   color: var(--medium-text);
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 600;
   margin-top: 0.4em;
   margin-bottom: 0.2em;
@@ -125,6 +125,7 @@ ul, ol {
 
 li {
   margin-bottom: 0.4em;
+  font-size: 0.95em; /* Slightly smaller than main text */
 }
 
 /* Emphasis */
@@ -177,12 +178,23 @@ pre code {
   line-height: 1.5;
 }
 
-/* Academic Tables - Clean and Readable */
+/* LaTeX Math - Support for display and inline math */
+.math-display {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+
+.math-inline {
+  font-style: italic;
+}
+
+/* Academic Tables - Improved for readability */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 1em 0;
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 table thead {
@@ -193,12 +205,12 @@ table th {
   color: var(--primary-blue);
   font-weight: 600;
   text-align: left;
-  padding: 10px;
+  padding: 12px 16px;
   background-color: var(--light-blue);
 }
 
 table td {
-  padding: 8px 10px;
+  padding: 10px 16px;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -224,6 +236,7 @@ blockquote {
   margin-right: 0;
   font-style: italic;
   color: var(--medium-text);
+  font-size: 0.95em;
 }
 
 /* Horizontal rule */
@@ -238,7 +251,7 @@ hr {
 .result-card {
   background-color: white;
   border-radius: 8px;
-  padding: 16px;
+  padding: 18px;
   margin: 1em 0;
   box-shadow: var(--card-shadow);
   border-left: 4px solid var(--primary-blue);
@@ -248,11 +261,11 @@ hr {
   font-weight: 600;
   color: var(--primary-blue);
   margin: 0 0 8px 0;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .result-card-content {
-  font-size: 0.9em;
+  font-size: 0.95em;
 }
 
 /* Method Card */
@@ -260,7 +273,7 @@ hr {
   background-color: white;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 16px;
+  padding: 18px;
   margin: 1em 0;
 }
 
@@ -268,13 +281,13 @@ hr {
   font-weight: 600;
   color: var(--primary-blue);
   margin: 0 0 10px 0;
-  font-size: 1em;
+  font-size: 1.1em;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .method-card-content {
-  font-size: 0.9em;
+  font-size: 0.95em;
 }
 
 /* Simple colored backgrounds */
@@ -306,7 +319,7 @@ img {
 
 .image-caption {
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: var(--medium-text);
   margin-top: 0.5em;
 }
@@ -357,46 +370,16 @@ img[alt~="center"] {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* Algorithm / pseudocode */
-.algorithm {
-  background-color: var(--code-bg);
-  border-radius: 5px;
-  padding: 16px;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.85em;
-  margin: 1em 0;
-  line-height: 1.5;
-}
-
-.algorithm-title {
-  font-weight: 600;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 6px;
-  margin-bottom: 10px;
-}
-
-/* Equation styling */
-.equation {
-  text-align: center;
-  margin: 1em 0;
-  font-size: 1.1em;
-}
-
-.equation-number {
-  float: right;
-  color: var(--light-text);
-}
-
 /* Citation */
 .citation {
-  font-size: 0.7em;
+  font-size: 0.8em;
   color: var(--light-text);
   vertical-align: super;
 }
 
 /* References section */
 .references {
-  font-size: 0.75em;
+  font-size: 0.85em; /* Larger reference text */
   color: var(--medium-text);
   margin: 1em 0;
 }
@@ -409,15 +392,16 @@ img[alt~="center"] {
 }
 
 .reference-item {
-  margin-bottom: 0.6em;
+  margin-bottom: 0.8em;
   padding-left: 1.5em;
   text-indent: -1.5em;
+  line-height: 1.4;
 }
 
 /* Footer with page number and name */
 section::after {
   content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
-  font-size: 0.8em;
+  font-size: 0.9em; /* Larger pagination */
   color: var(--medium-text);
   position: absolute;
   bottom: 15px;
@@ -429,7 +413,7 @@ section::after {
   position: absolute;
   bottom: 15px;
   left: 20px;
-  font-size: 0.7em;
+  font-size: 0.8em; /* Larger footer text */
   color: var(--light-text);
 }
 
@@ -474,7 +458,7 @@ section::after {
 }
 
 .font-small {
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .font-medium {
@@ -520,9 +504,9 @@ section.thank-you {
 
 .contact-info {
   margin-top: 2em;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .contact-info p {
-  margin: 0.3em 0;
+  margin: 0.4em 0;
 }
