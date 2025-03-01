@@ -117,7 +117,7 @@ td {
     padding: 12px;
 }
 
-/* Dataset-specific row colors */
+/* Dataset-specific row styles */
 tr.ewa-db {
     background-color: #ebf8ff;
 }
@@ -126,6 +126,7 @@ tr.pc-gita {
     background-color: #e6fffa;
 }
 
+/* Baseline vs proposed rows */
 tr.baseline {
     background-color: #f7fafc;
 }
@@ -137,9 +138,10 @@ tr.proposed {
 /* Highlight cells with important data */
 td.highlight {
     font-weight: 500;
+    color: #2c5282;
 }
 
-/* Emphasize values in table */
+/* Values styling */
 td.value-high {
     color: #2c5282;
     font-weight: 500;
@@ -154,17 +156,16 @@ td.value-low {
     color: #718096;
 }
 
-/* Comparison indicators */
 td.better {
-    background-color: rgba(72, 187, 120, 0.2);
+    color: #2f855a;
     font-weight: 500;
 }
 
 td.worse {
-    background-color: rgba(237, 137, 54, 0.2);
+    color: #c05621;
 }
 
-/* Images - removed borders and shadows as requested */
+/* Images - REMOVED BORDERS AND SHADOWS */
 img {
     max-width: 100%;
     height: auto;
@@ -297,9 +298,17 @@ blockquote {
     border-radius: 6px;
 }
 
-/* Math formatting */
+/* Math formatting - TRANSPARENT BACKGROUND */
 .math {
     font-family: 'Latin Modern Math', serif;
+}
+
+/* Equation container - TRANSPARENT BACKGROUND */
+.equation-container {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: transparent;
+    text-align: center;
 }
 
 /* Footer and header styles */
@@ -358,10 +367,6 @@ section.dark table td {
     border-color: #4a5568;
 }
 
-section.dark table tr:nth-child(even) {
-    background-color: #2d3748;
-}
-
 /* Titles and emphasis */
 .paper-title {
     font-size: 42px;
@@ -381,15 +386,6 @@ section.dark table tr:nth-child(even) {
 .emphasis {
     color: #3182ce;
     font-weight: 500;
-}
-
-/* Equation styling */
-.equation-container {
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #f7fafc;
-    border-radius: 6px;
-    text-align: center;
 }
 
 /* Card styling */
@@ -503,12 +499,13 @@ section {
     text-align: center;
 }
 
-/* Speech task indicators */
+/* Speech task icons/indicators */
 .speech-task {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 4px;
     margin-right: 8px;
+    font-size: 18px;
 }
 
 .ddk-task {
@@ -519,15 +516,4 @@ section {
 .continuous-task {
     background-color: #ebf8ff;
     border: 1px solid #4299e1;
-}
-
-/* Dataset identifiers */
-.ewa-db-label {
-    color: #3182ce;
-    font-weight: 500;
-}
-
-.pc-gita-label {
-    color: #38b2ac;
-    font-weight: 500;
 }
