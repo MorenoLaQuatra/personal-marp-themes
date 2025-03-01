@@ -9,7 +9,7 @@
 section {
     font-family: 'Lexend', sans-serif;
     font-weight: 300;
-    font-size: 24px; /* Slightly reduced from 26px */
+    font-size: 24px;
     padding: 40px;
     background: #ffffff;
     color: #333333;
@@ -19,7 +19,7 @@ section {
 /* Headers */
 h1 {
     color: #1a365d;
-    font-size: 36px; /* Slightly reduced from 38px */
+    font-size: 36px;
     font-weight: 500;
     margin-bottom: 25px;
     line-height: 1.2;
@@ -28,7 +28,7 @@ h1 {
 h2 {
     color: #2c5282;
     font-weight: 500;
-    font-size: 32px; /* Slightly reduced from 34px */
+    font-size: 32px;
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 8px;
     margin-top: 18px;
@@ -37,7 +37,7 @@ h2 {
 
 h3 {
     color: #2c5282;
-    font-size: 28px; /* Slightly reduced from 30px */
+    font-size: 28px;
     font-weight: 500;
     margin-top: 14px;
     margin-bottom: 14px;
@@ -45,7 +45,7 @@ h3 {
 
 h4 {
     color: #4a5568;
-    font-size: 26px; /* Slightly reduced from 28px */
+    font-size: 26px;
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -54,7 +54,7 @@ h4 {
 /* Strong text */
 strong, b {
     font-weight: 500;
-    color: #2c5282; /* Added color to make important points stand out */
+    color: #2c5282;
 }
 
 /* Lists */
@@ -100,7 +100,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: 20px 0;
-    font-size: 22px; /* Slightly reduced from 24px */
+    font-size: 22px;
 }
 
 th {
@@ -117,9 +117,25 @@ td {
     padding: 12px;
 }
 
+/* Dataset-specific row colors */
+tr.ewa-db {
+    background-color: #ebf8ff;
+}
+
+tr.pc-gita {
+    background-color: #e6fffa;
+}
+
+tr.baseline {
+    background-color: #f7fafc;
+}
+
+tr.proposed {
+    background-color: #f0fff4;
+}
+
 /* Highlight cells with important data */
 td.highlight {
-    background-color: #ebf8ff;
     font-weight: 500;
 }
 
@@ -138,16 +154,22 @@ td.value-low {
     color: #718096;
 }
 
-tr:nth-child(even) {
-    background-color: #f7fafc;
+/* Comparison indicators */
+td.better {
+    background-color: rgba(72, 187, 120, 0.2);
+    font-weight: 500;
 }
 
-/* Images */
+td.worse {
+    background-color: rgba(237, 137, 54, 0.2);
+}
+
+/* Images - removed borders and shadows as requested */
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added subtle shadow */
+    border-radius: 0;
+    box-shadow: none;
 }
 
 /* Blockquotes */
@@ -210,15 +232,15 @@ blockquote {
 }
 
 .small-text {
-    font-size: 20px; /* Slightly reduced from 22px */
+    font-size: 20px;
 }
 
 .tiny-text {
-    font-size: 16px; /* Slightly reduced from 18px */
+    font-size: 16px;
 }
 
 .large-text {
-    font-size: 30px; /* Slightly reduced from 32px */
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -342,7 +364,7 @@ section.dark table tr:nth-child(even) {
 
 /* Titles and emphasis */
 .paper-title {
-    font-size: 42px; /* Slightly reduced from 44px */
+    font-size: 42px;
     font-weight: 500;
     color: #2c5282;
     line-height: 1.2;
@@ -352,7 +374,7 @@ section.dark table tr:nth-child(even) {
 .section-title {
     color: #2c5282;
     font-weight: 500;
-    font-size: 30px; /* Slightly reduced from 32px */
+    font-size: 30px;
     margin-bottom: 15px;
 }
 
@@ -453,9 +475,7 @@ section {
 
 .figure img {
     max-width: 100%;
-    border-radius: 6px;
     margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .figure-caption {
@@ -463,8 +483,6 @@ section {
     color: #718096;
     margin-top: 8px;
 }
-
-/* NEW ADDITIONS */
 
 /* QR Code styling */
 .qr-code {
@@ -476,8 +494,6 @@ section {
 
 .qr-code img {
     max-width: 150px;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
 }
 
 .qr-code-caption {
@@ -487,89 +503,7 @@ section {
     text-align: center;
 }
 
-/* Timeline component */
-.timeline {
-    margin: 20px 0;
-    padding: 0;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 10px;
-    height: 100%;
-    width: 4px;
-    background: #e2e8f0;
-}
-
-.timeline-item {
-    margin-left: 30px;
-    padding: 10px 0;
-    position: relative;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -24px;
-    top: 15px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #3182ce;
-}
-
-/* Comparison highlight for tables */
-.better {
-    background-color: rgba(72, 187, 120, 0.2);
-    font-weight: 500;
-}
-
-.worse {
-    background-color: rgba(237, 137, 54, 0.2);
-}
-
-/* Architecture diagram components */
-.component {
-    padding: 10px;
-    margin: 5px;
-    background-color: #ebf8ff;
-    border-radius: 6px;
-    text-align: center;
-    border: 1px solid #4299e1;
-}
-
-.component-highlight {
-    background-color: #e6fffa;
-    border: 1px solid #38b2ac;
-    font-weight: 500;
-}
-
-.component-connection {
-    height: 30px;
-    border-left: 2px dashed #718096;
-    margin-left: 50%;
-}
-
-/* Results comparison */
-.results-comparison {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px 0;
-}
-
-.key-finding {
-    background-color: #f0fff4;
-    padding: 8px 12px;
-    border-radius: 4px;
-    margin: 6px 0;
-    border-left: 3px solid #48bb78;
-}
-
-/* Speech task icons/indicators */
+/* Speech task indicators */
 .speech-task {
     display: inline-block;
     padding: 5px 10px;
@@ -585,4 +519,15 @@ section {
 .continuous-task {
     background-color: #ebf8ff;
     border: 1px solid #4299e1;
+}
+
+/* Dataset identifiers */
+.ewa-db-label {
+    color: #3182ce;
+    font-weight: 500;
+}
+
+.pc-gita-label {
+    color: #38b2ac;
+    font-weight: 500;
 }
