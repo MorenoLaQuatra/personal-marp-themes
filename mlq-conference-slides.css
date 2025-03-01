@@ -1,0 +1,519 @@
+/* @theme mlq-conference-slides */
+/* Author: Moreno La Quatra https://github.com/MorenoLaQuatra */
+@import "default";
+
+/* Base Theme */
+section {
+    font-size: 28px;
+    padding: 40px;
+    background: #ffffff;
+    color: #2d3748;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header/Footer */
+header {
+    font-size: 18px;
+    color: #4a5568;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 8px 40px;
+    border-bottom: 1px solid rgba(44, 82, 130, 0.2);
+}
+
+footer {
+    font-size: 16px;
+    color: #4a5568;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 8px 40px;
+    text-align: right;
+    border-top: 1px solid rgba(44, 82, 130, 0.2);
+}
+
+/* Typography */
+h1 {
+    color: #1a365d;
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: #2c5282;
+    border-bottom: 2px solid #2c5282;
+    padding-bottom: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 14px;
+}
+
+h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    height: 20px;
+    width: 5px;
+    background-color: #2c5282;
+    border-radius: 2px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+strong {
+    color: #2c5282;
+    font-weight: 600;
+}
+
+a {
+    color: #3182ce;
+    text-decoration: none;
+    border-bottom: 1px dotted #3182ce;
+}
+
+a:hover {
+    color: #2b6cb0;
+    border-bottom: 1px solid #2b6cb0;
+}
+
+/* Content Elements */
+ul, ol { 
+    margin-left: 30px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: #2c5282;
+}
+
+code {
+    background: #f7fafc;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.9em;
+    color: #2c5282;
+    border: 1px solid #e2e8f0;
+}
+
+pre {
+    background: #f7fafc;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+pre code {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+blockquote {
+    border-left: 4px solid #2c5282;
+    padding-left: 20px;
+    color: #4a5568;
+    font-style: italic;
+    margin: 16px 0;
+    background-color: rgba(44, 82, 130, 0.05);
+    padding: 12px 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0;
+}
+
+/* Math Elements */
+.math {
+    font-size: 1.1em;
+}
+
+/* Custom Classes */
+.authors {
+    font-size: 24px;
+    color: #4a5568;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.centered { text-align: center; }
+.right { text-align: right; }
+.left { text-align: left; }
+
+.highlight { 
+    color: #2c5282;
+    font-weight: bold;
+}
+
+.note {
+    font-size: 0.8em;
+    color: #666;
+    font-style: italic;
+}
+
+.tag {
+    display: inline-block;
+    background: #ebf8ff;
+    color: #2c5282;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 6px;
+    border: 1px solid #bee3f8;
+}
+
+/* Layouts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin: 16px 0;
+}
+
+.split-30-70 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.split-70-30 {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.split-40-60 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.split-60-40 {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+/* Components */
+.card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+section:not(.invert) .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-primary {
+    background: #ebf8ff;
+    border: 1px solid #bee3f8;
+}
+
+.card-success {
+    background: #f0fff4;
+    border: 1px solid #c6f6d5;
+}
+
+.card-warning {
+    background: #fffaf0;
+    border: 1px solid #feebc8;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: #2c5282;
+    border-radius: 50%;
+    position: relative;
+}
+
+.timeline-dot::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    width: 2px;
+    height: calc(100% + 20px);
+    background-color: #e2e8f0;
+}
+
+.timeline > div:last-child .timeline-dot::after {
+    display: none;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #2c5282;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Image Containers */
+.img-shadow img {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.img-border img {
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.img-round img {
+    border-radius: 50%;
+}
+
+.img-caption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #4a5568;
+    margin-top: 5px;
+}
+
+/* Citations */
+.citation {
+    font-size: 0.8em;
+    color: #666;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 8px;
+    margin-top: 20px;
+}
+
+/* Title Slide Specific */
+section.title-slide {
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+section.title-slide h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+section.title-slide h2 {
+    border-bottom: none;
+    color: #4a5568;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* Metric Element */
+.metric {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.metric .value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2c5282;
+    margin: 10px 0;
+}
+
+.metric .label {
+    color: #4a5568;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 16px;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: #2c5282;
+    width: var(--progress, 0%);
+}
+
+/* Dark Mode (for .invert class slides) */
+section.invert {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+section.invert h1 {
+    color: #90cdf4;
+}
+
+section.invert h2 {
+    color: #90cdf4;
+    border-bottom-color: #90cdf4;
+}
+
+section.invert h3 {
+    color: #e2e8f0;
+}
+
+section.invert h3::before {
+    background-color: #90cdf4;
+}
+
+section.invert a {
+    color: #63b3ed;
+    border-bottom-color: #63b3ed;
+}
+
+section.invert a:hover {
+    color: #90cdf4;
+    border-bottom-color: #90cdf4;
+}
+
+section.invert strong {
+    color: #90cdf4;
+}
+
+section.invert .card {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+section.invert code {
+    background-color: #2d3748;
+    color: #90cdf4;
+    border-color: #4a5568;
+}
+
+section.invert pre {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+section.invert blockquote {
+    border-left-color: #90cdf4;
+    background-color: rgba(144, 205, 244, 0.1);
+}
+
+section.invert table th {
+    background-color: #2d3748;
+    color: #90cdf4;
+}
+
+section.invert table td, section.invert table th {
+    border-color: #4a5568;
+}
+
+section.invert table tr:nth-child(even) {
+    background-color: #2d3748;
+}
+
+section.invert header, section.invert footer {
+    background-color: rgba(26, 32, 44, 0.95);
+    color: #e2e8f0;
+    border-color: rgba(144, 205, 244, 0.2);
+}
+
+/* Transition for smooth color changes */
+* {
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+/* Additional Icon Classes */
+.icon-large {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #2c5282;
+}
+
+section.invert .icon-large {
+    color: #90cdf4;
+}
+
+/* Print & PDF Optimization */
+@page {
+    size: 1280px 720px;
+    margin: 0;
+}
+
+@media print {
+    section {
+        page-break-inside: avoid;
+        page-break-after: always;
+    }
+    
+    section::after {
+        display: none !important;
+    }
+}
