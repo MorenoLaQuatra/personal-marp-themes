@@ -1,5 +1,5 @@
 /* @theme mlq-conference-theme */
-/* Author: Moreno La Quatra */
+/* Author: Moreno La Quatra (Updated) */
 
 @import "default";
 
@@ -493,19 +493,6 @@ section.section-alt h1::after {
 }
 
 /* Footer and Header */
-section::after {
-  content: attr(data-footer) " • " attr(data-conference);
-  color: var(--color-text-light);
-  font-size: 0.8rem; /* Increased from 0.7rem */
-  font-weight: 300;
-  position: absolute;
-  bottom: 0.7rem;
-  right: 1.2rem;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--border-radius);
-}
-
 section::before {
   content: attr(data-header);
   color: var(--color-text-light);
@@ -514,6 +501,20 @@ section::before {
   position: absolute;
   top: 0.7rem;
   left: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--border-radius);
+}
+
+/* Combined Footer and Pagination - FIXED VERSION */
+section::after {
+  font-size: 0.8rem; /* Increased from 0.7rem */
+  font-weight: 300;
+  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total) " • " attr(data-footer) " • " attr(data-conference);
+  position: absolute;
+  bottom: 0.7rem;
+  right: 1.2rem;
+  color: var(--color-text-light);
   background-color: rgba(255, 255, 255, 0.7);
   padding: 0.25rem 0.6rem;
   border-radius: var(--border-radius);
@@ -829,20 +830,6 @@ section::before {
 .badge {
   background-color: var(--color-primary);
   color: white;
-}
-
-/* Pagination */
-section::after {
-  font-size: 0.8rem; /* Increased from 0.7rem */
-  font-weight: 300;
-  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total) " • " attr(data-footer);
-  position: absolute;
-  bottom: 0.7rem;
-  right: 1.2rem;
-  color: var(--color-text-light);
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--border-radius);
 }
 
 /* Alternative Color Schemes */
