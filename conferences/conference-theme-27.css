@@ -629,3 +629,99 @@ section.dark table th {
 section.dark table td {
   border-color: var(--neutral-700);
 }
+
+
+/* Contact information grid layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.contact-item {
+  text-align: center;
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  background-color: var(--neutral-100);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.author-name {
+  font-weight: 500;
+  color: var(--primary-dark);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-2);
+}
+
+.affiliation {
+  font-size: var(--font-size-sm);
+  color: var(--neutral-600);
+  margin-top: var(--spacing-2);
+}
+
+.contact-item a {
+  color: var(--primary);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Resources section styling */
+.resources {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-5);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--primary-light);
+}
+
+.resource-title {
+  font-weight: 500;
+  color: var(--primary-dark);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-3);
+}
+
+.repo-link {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-5);
+  background-color: var(--primary);
+  color: white !important;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s;
+}
+
+.repo-link:hover {
+  background-color: var(--primary-dark);
+  text-decoration: none !important;
+}
+
+/* Additional spacing */
+.mt-30 {
+  margin-top: var(--spacing-8);
+}
+
+/* QR code styling improvements */
+.qr-code {
+  background-color: white;
+  display: inline-block;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius-sm);
+  margin-top: var(--spacing-3);
+}
