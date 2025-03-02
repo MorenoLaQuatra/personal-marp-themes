@@ -5,6 +5,31 @@
 /* Google Fonts - Lexend */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+/* Color variables - color-blind friendly palette */
+:root {
+    /* Main colors */
+    --primary-dark: #0d3b66;     /* Dark blue - for main headers */
+    --primary: #1376c6;          /* Blue - for subheaders and emphasis */
+    --primary-light: #5aa7de;    /* Light blue - for highlights */
+    --primary-pale: #e1f0fa;     /* Very light blue - for backgrounds */
+
+    /* Secondary colors */
+    --secondary-dark: #4c4c4c;   /* Dark gray - for body text */
+    --secondary: #6b6b6b;        /* Medium gray - for less important text */
+    --secondary-light: #adadad;  /* Light gray - for borders */
+    --secondary-pale: #f2f2f2;   /* Very light gray - for backgrounds */
+
+    /* Accent colors - color-blind friendly */
+    --accent-orange: #e67700;    /* Accessible orange */
+    --accent-orange-light: #fff3e0;
+    --accent-green: #087f23;     /* Accessible green */
+    --accent-green-light: #e8f5e9;
+    --accent-purple: #7b1fa2;    /* Accessible purple */
+    --accent-purple-light: #f3e5f5;
+    --accent-red: #c62828;       /* Accessible red */
+    --accent-red-light: #ffebee;
+}
+
 /* Base slide styling */
 section {
     font-family: 'Lexend', sans-serif;
@@ -12,13 +37,13 @@ section {
     font-size: 24px;
     padding: 40px;
     background: #ffffff;
-    color: #333333;
+    color: var(--secondary-dark);
     line-height: 1.5;
 }
 
 /* Headers */
 h1 {
-    color: #1a365d;
+    color: var(--primary-dark);
     font-size: 36px;
     font-weight: 500;
     margin-bottom: 25px;
@@ -26,17 +51,17 @@ h1 {
 }
 
 h2 {
-    color: #2c5282;
+    color: var(--primary);
     font-weight: 500;
     font-size: 32px;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid var(--secondary-light);
     padding-bottom: 8px;
     margin-top: 18px;
     margin-bottom: 18px;
 }
 
 h3 {
-    color: #2c5282;
+    color: var(--primary);
     font-size: 28px;
     font-weight: 500;
     margin-top: 14px;
@@ -44,7 +69,7 @@ h3 {
 }
 
 h4 {
-    color: #4a5568;
+    color: var(--secondary-dark);
     font-size: 26px;
     font-weight: 500;
     margin-top: 10px;
@@ -54,7 +79,7 @@ h4 {
 /* Strong text */
 strong, b {
     font-weight: 500;
-    color: #2c5282;
+    color: var(--primary);
 }
 
 /* Lists */
@@ -69,7 +94,7 @@ li {
 
 /* Links */
 a {
-    color: #3182ce;
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -80,19 +105,19 @@ a:hover {
 /* Code blocks */
 code {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    background-color: #f7fafc;
+    background-color: var(--secondary-pale);
     padding: 2px 4px;
     border-radius: 3px;
     font-size: 90%;
 }
 
 pre {
-    background-color: #f7fafc;
+    background-color: var(--secondary-pale);
     padding: 15px;
     border-radius: 6px;
     overflow-x: auto;
     margin: 20px 0;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--secondary-light);
 }
 
 /* Tables */
@@ -104,65 +129,86 @@ table {
 }
 
 th {
-    background-color: #edf2f7;
-    color: #2c5282;
+    background-color: var(--primary-dark);
+    color: white;
     text-align: left;
     padding: 12px;
     font-weight: 500;
-    border-bottom: 2px solid #cbd5e0;
+    border-bottom: 2px solid var(--primary);
 }
 
 td {
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--secondary-light);
     padding: 12px;
 }
 
-/* Dataset-specific row styles */
+/* Dataset-specific row styles - with more distinctive patterns for color-blind friendliness */
 tr.ewa-db {
-    background-color: #ebf8ff;
+    background-color: var(--primary-pale);
+    border-left: 5px solid var(--primary); /* Blue left border */
 }
 
 tr.pc-gita {
-    background-color: #e6fffa;
+    background-color: var(--accent-purple-light);
+    border-left: 5px solid var(--accent-purple); /* Purple left border instead of teal */
 }
 
-/* Baseline vs proposed rows */
-tr.baseline {
-    background-color: #f7fafc;
+/* Row highlight states */
+.highlight-table tr.highlight-row.ewa-db {
+    background-color: var(--primary-pale);
+    border-left: 5px solid var(--primary);
+    box-shadow: inset 0 0 0 1px var(--primary-light);
 }
 
-tr.proposed {
-    background-color: #f0fff4;
+.highlight-table tr.highlight-row.pc-gita {
+    background-color: var(--accent-purple-light);
+    border-left: 5px solid var(--accent-purple);
+    box-shadow: inset 0 0 0 1px var(--accent-purple);
 }
 
-/* Highlight cells with important data */
-td.highlight {
-    font-weight: 500;
-    color: #2c5282;
+.highlight-table tr.lowlight-row {
+    opacity: 0.35;
+}
+
+/* Add dataset indicators */
+tr.ewa-db td:first-child::before {
+    content: "■";
+    color: var(--primary);
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+tr.pc-gita td:first-child::before {
+    content: "▲";  /* Different symbol for better distinction */
+    color: var(--accent-purple);
+    margin-right: 5px;
+    font-weight: bold;
 }
 
 /* Values styling */
-td.value-high {
-    color: #2c5282;
-    font-weight: 500;
+.comparison-table .high-value {
+    color: var(--accent-green);
+    font-weight: 600;
+    background-color: var(--accent-green-light);
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
-td.value-medium {
-    color: #3182ce;
-    font-weight: 400;
-}
-
-td.value-low {
-    color: #718096;
+.comparison-table .low-value {
+    color: var(--accent-red);
+    font-weight: 600;
+    background-color: var(--accent-red-light);
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
 td.better {
-    color: #2f855a;
+    color: var(--accent-green);
     font-weight: 500;
 }
 
 td.worse {
-    color: #c05621;
+    color: var(--accent-red);
 }
 
 /* Images */
@@ -175,17 +221,17 @@ img {
 
 /* Blockquotes */
 blockquote {
-    border-left: 4px solid #3182ce;
+    border-left: 4px solid var(--primary);
     padding-left: 20px;
     margin-left: 0;
-    color: #4a5568;
+    color: var(--secondary);
     font-style: italic;
 }
 
 /* Custom classes */
 .authors {
     font-size: 24px;
-    color: #4a5568;
+    color: var(--secondary);
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -207,7 +253,7 @@ blockquote {
 }
 
 .highlight {
-    color: #2c5282;
+    color: var(--primary);
     font-weight: 500;
 }
 
@@ -265,34 +311,34 @@ blockquote {
     gap: 15px;
 }
 
-/* Box containers */
+/* Box containers - revised for color blind accessibility */
 .info-box {
-    background-color: #ebf8ff;
-    border-left: 4px solid #4299e1;
+    background-color: var(--primary-pale);
+    border-left: 4px solid var(--primary);
     padding: 16px;
     margin: 15px 0;
     border-radius: 6px;
 }
 
 .warning-box {
-    background-color: #fffaf0;
-    border-left: 4px solid #ed8936;
+    background-color: var(--accent-orange-light);
+    border-left: 4px solid var(--accent-orange);
     padding: 16px;
     margin: 15px 0;
     border-radius: 6px;
 }
 
 .success-box {
-    background-color: #f0fff4;
-    border-left: 4px solid #48bb78;
+    background-color: var(--accent-green-light);
+    border-left: 4px solid var(--accent-green);
     padding: 16px;
     margin: 15px 0;
     border-radius: 6px;
 }
 
 .error-box {
-    background-color: #fff5f5;
-    border-left: 4px solid #f56565;
+    background-color: var(--accent-red-light);
+    border-left: 4px solid var(--accent-red);
     padding: 16px;
     margin: 15px 0;
     border-radius: 6px;
@@ -313,7 +359,7 @@ blockquote {
 
 /* Footer and header styles */
 header, footer {
-    color: #718096;
+    color: var(--secondary);
     font-size: 16px;
     font-weight: 300;
 }
@@ -325,36 +371,36 @@ section.dark {
 }
 
 section.dark h1 {
-    color: #90cdf4;
+    color: var(--primary-light);
 }
 
 section.dark h2 {
-    color: #63b3ed;
+    color: var(--primary-light);
     border-bottom-color: #2d3748;
 }
 
 section.dark a {
-    color: #63b3ed;
+    color: var(--primary-light);
 }
 
 section.dark .info-box {
-    background-color: rgba(66, 153, 225, 0.1);
-    border-left-color: #4299e1;
+    background-color: rgba(19, 118, 198, 0.1);
+    border-left-color: var(--primary);
 }
 
 section.dark .warning-box {
-    background-color: rgba(237, 137, 54, 0.1);
-    border-left-color: #ed8936;
+    background-color: rgba(230, 119, 0, 0.1);
+    border-left-color: var(--accent-orange);
 }
 
 section.dark .success-box {
-    background-color: rgba(72, 187, 120, 0.1);
-    border-left-color: #48bb78;
+    background-color: rgba(8, 127, 35, 0.1);
+    border-left-color: var(--accent-green);
 }
 
 section.dark .error-box {
-    background-color: rgba(245, 101, 101, 0.1);
-    border-left-color: #f56565;
+    background-color: rgba(198, 40, 40, 0.1);
+    border-left-color: var(--accent-red);
 }
 
 section.dark table th {
@@ -371,26 +417,26 @@ section.dark table td {
 .paper-title {
     font-size: 42px;
     font-weight: 500;
-    color: #2c5282;
+    color: var(--primary-dark);
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
 .section-title {
-    color: #2c5282;
+    color: var(--primary);
     font-weight: 500;
     font-size: 30px;
     margin-bottom: 15px;
 }
 
 .emphasis {
-    color: #3182ce;
+    color: var(--primary);
     font-weight: 500;
 }
 
 /* Card styling */
 .card {
-    background-color: #f7fafc;
+    background-color: var(--secondary-pale);
     border-radius: 8px;
     padding: 20px;
     margin: 10px 0;
@@ -399,7 +445,7 @@ section.dark table td {
 
 .card-title {
     font-weight: 500;
-    color: #2c5282;
+    color: var(--primary);
     margin-bottom: 10px;
     font-size: 26px;
 }
@@ -407,7 +453,7 @@ section.dark table td {
 /* For citations */
 .citation {
     font-size: 18px;
-    color: #718096;
+    color: var(--secondary);
     margin-top: 40px;
 }
 
@@ -442,25 +488,25 @@ section {
     margin-bottom: 20px;
 }
 
-/* Highlight colors */
+/* Highlight colors - more accessible */
 .text-primary {
-    color: #3182ce;
+    color: var(--primary);
 }
 
 .text-secondary {
-    color: #2c5282;
+    color: var(--primary-dark);
 }
 
 .text-success {
-    color: #48bb78;
+    color: var(--accent-green);
 }
 
 .text-warning {
-    color: #ed8936;
+    color: var(--accent-orange);
 }
 
 .text-danger {
-    color: #f56565;
+    color: var(--accent-red);
 }
 
 /* Figures container */
@@ -476,7 +522,7 @@ section {
 
 .figure-caption {
     font-size: 20px;
-    color: #718096;
+    color: var(--secondary);
     margin-top: 8px;
 }
 
@@ -494,12 +540,12 @@ section {
 
 .qr-code-caption {
     font-size: 18px;
-    color: #4a5568;
+    color: var(--secondary-dark);
     margin-top: 5px;
     text-align: center;
 }
 
-/* Speech task icons/indicators */
+/* Speech task icons/indicators - more distinguishable patterns */
 .speech-task {
     display: inline-block;
     padding: 5px 10px;
@@ -509,13 +555,27 @@ section {
 }
 
 .ddk-task {
-    background-color: #e6fffa;
-    border: 1px solid #38b2ac;
+    background-color: var(--accent-purple-light);
+    border: 1px solid var(--accent-purple);
+    position: relative;
+}
+
+.ddk-task::before {
+    content: "●";
+    margin-right: 4px;
+    color: var(--accent-purple);
 }
 
 .continuous-task {
-    background-color: #ebf8ff;
-    border: 1px solid #4299e1;
+    background-color: var(--primary-pale);
+    border: 1px solid var(--primary);
+    position: relative;
+}
+
+.continuous-task::before {
+    content: "■";
+    margin-right: 4px;
+    color: var(--primary);
 }
 
 /* Comparison tables */
@@ -525,7 +585,7 @@ section {
 }
 
 .comparison-table th {
-    background-color: #2c5282;
+    background-color: var(--primary-dark);
     color: white;
     text-align: center;
     padding: 8px;
@@ -537,24 +597,14 @@ section {
 }
 
 .comparison-table .highlight-cell {
-    background-color: #f0fff4;
-    font-weight: 500;
-}
-
-.comparison-table .low-value {
-    color: #e53e3e;
-    font-weight: 500;
-}
-
-.comparison-table .high-value {
-    color: #276749;
+    background-color: var(--accent-green-light);
     font-weight: 500;
 }
 
 /* Model architecture box */
 .model-component {
-    background-color: #f7fafc;
-    border: 2px solid #3182ce;
+    background-color: var(--secondary-pale);
+    border: 2px solid var(--primary);
     border-radius: 8px;
     padding: 12px;
     margin: 8px;
@@ -563,31 +613,31 @@ section {
 }
 
 .ddk-head {
-    background-color: #e6fffa;
-    border-color: #38b2ac;
+    background-color: var(--accent-purple-light);
+    border-color: var(--accent-purple);
 }
 
 .speech-head {
-    background-color: #ebf8ff;
-    border-color: #4299e1;
+    background-color: var(--primary-pale);
+    border-color: var(--primary);
 }
 
 .backbone {
-    background-color: #edf2f7;
-    border-color: #2c5282;
+    background-color: var(--secondary-pale);
+    border-color: var(--primary-dark);
 }
 
 /* Flow arrows */
 .arrow-down {
     text-align: center;
     font-size: 24px;
-    color: #3182ce;
+    color: var(--primary);
     margin: 5px 0;
 }
 
 .arrow-right {
     display: inline-block;
-    color: #3182ce;
+    color: var(--primary);
     font-size: 24px;
     margin: 0 10px;
 }
@@ -602,16 +652,16 @@ section {
 
 /* Challenge boxes */
 .challenge-box {
-    background-color: #fffaf0;
-    border-left: 4px solid #ed8936;
+    background-color: var(--accent-orange-light);
+    border-left: 4px solid var(--accent-orange);
     padding: 15px;
     margin: 10px 0;
     border-radius: 6px;
 }
 
 .solution-box {
-    background-color: #f0fff4;
-    border-left: 4px solid #38a169;
+    background-color: var(--accent-green-light);
+    border-left: 4px solid var(--accent-green);
     padding: 15px;
     margin: 10px 0;
     border-radius: 6px;
@@ -621,12 +671,12 @@ section {
 .key-result {
     font-size: 32px;
     font-weight: 500;
-    color: #2c5282;
+    color: var(--primary-dark);
     text-align: center;
     margin: 20px 0;
 }
 
-/* Language indicators */
+/* Language indicators - with patterns for better distinction */
 .language-tag {
     display: inline-block;
     padding: 3px 8px;
@@ -637,13 +687,27 @@ section {
 }
 
 .slovak {
-    background-color: #ebf8ff;
-    color: #2b6cb0;
+    background-color: var(--primary-pale);
+    color: var(--primary-dark);
+    position: relative;
+}
+
+.slovak::before {
+    content: "■";
+    margin-right: 4px;
+    color: var(--primary);
 }
 
 .spanish {
-    background-color: #e6fffa;
-    color: #2c7a7b;
+    background-color: var(--accent-purple-light);
+    color: var(--accent-purple);
+    position: relative;
+}
+
+.spanish::before {
+    content: "▲";
+    margin-right: 4px;
+    color: var(--accent-purple);
 }
 
 /* Data flow diagram */
@@ -655,8 +719,8 @@ section {
 }
 
 .data-node {
-    background-color: #edf2f7;
-    border: 2px solid #3182ce;
+    background-color: var(--secondary-pale);
+    border: 2px solid var(--primary);
     border-radius: 8px;
     padding: 10px;
     text-align: center;
@@ -666,7 +730,7 @@ section {
 .data-arrow {
     flex-grow: 1;
     text-align: center;
-    color: #3182ce;
+    color: var(--primary);
     font-size: 24px;
 }
 
@@ -679,22 +743,22 @@ section {
 
 .comparison-side {
     flex: 1;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--secondary-light);
     border-radius: 8px;
     padding: 15px;
 }
 
 .comparison-title {
     font-weight: 500;
-    color: #2c5282;
+    color: var(--primary);
     text-align: center;
     margin-bottom: 10px;
 }
 
 /* Result highlight box */
 .result-highlight {
-    background-color: #f0fff4;
-    border: 2px solid #276749;
+    background-color: var(--accent-green-light);
+    border: 2px solid var(--accent-green);
     border-radius: 8px;
     padding: 15px;
     margin: 15px 0;
@@ -702,104 +766,48 @@ section {
 
 .result-heading {
     font-weight: 500;
-    color: #2c5282;
+    color: var(--primary);
     margin-bottom: 10px;
 }
 
-/* PD vs HC indicators */
+/* PD vs HC indicators - with better contrast */
 .pd-indicator {
-    color: #e53e3e;
+    color: var(--accent-red);
     font-weight: 500;
+    position: relative;
+}
+
+.pd-indicator::before {
+    content: "●";
+    margin-right: 4px;
 }
 
 .hc-indicator {
-    color: #38a169;
+    color: var(--accent-green);
     font-weight: 500;
+    position: relative;
 }
 
-/* New additions for the updated presentation */
-
-/* Highlight table rows for results slides */
-.highlight-table tr.highlight-row {
-    background-color: #f0fff4;
-}
-
-.highlight-table tr.lowlight-row {
-    opacity: 0.5;
+.hc-indicator::before {
+    content: "■";
+    margin-right: 4px;
 }
 
 /* Key insight box for results slides */
 .key-insight {
-    background-color: #ebf8ff;
-    border-left: 4px solid #3182ce;
+    background-color: var(--primary-pale);
+    border-left: 4px solid var(--primary);
     padding: 10px 15px;
     margin-top: 15px;
     border-radius: 4px;
     font-size: 20px;
 }
 
-
-/* Dataset-specific row styles - more distinctive */
-tr.ewa-db {
-    border-left: 5px solid #3182ce;  /* Blue left border */
-}
-
-tr.pc-gita {
-    border-left: 5px solid #38b2ac;  /* Teal left border */
-}
-
-/* Row highlight states - maintain dataset colors while focusing */
-.highlight-table tr.highlight-row.ewa-db {
-    background-color: rgba(235, 248, 255, 0.8);  /* Light blue with opacity */
-    border-left: 5px solid #3182ce;
-}
-
-.highlight-table tr.highlight-row.pc-gita {
-    background-color: rgba(230, 255, 250, 0.8);  /* Light teal with opacity */
-    border-left: 5px solid #38b2ac;
-}
-
-.highlight-table tr.lowlight-row {
-    opacity: 0.35;  /* More dimmed for better contrast */
-}
-
-/* Add dataset indicators to maintain visibility when rows are lowlighted */
-tr.ewa-db td:first-child::before {
-    content: "▪";
-    color: #3182ce;
-    margin-right: 5px;
-    font-weight: bold;
-}
-
-tr.pc-gita td:first-child::before {
-    content: "▪";
-    color: #38b2ac;
-    margin-right: 5px;
-    font-weight: bold;
-}
-
-/* Enhanced value highlighting - make it pop more */
-.comparison-table .high-value {
-    color: #2c7a7b;
-    font-weight: 600;
-    background-color: rgba(56, 161, 105, 0.1);
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-.comparison-table .low-value {
-    color: #c53030;
-    font-weight: 600;
-    background-color: rgba(229, 62, 62, 0.1);
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-/* Table header enhancement */
+/* Enhanced table header */
 .comparison-table th {
-    background-color: #2c5282;
+    background-color: var(--primary-dark);
     color: white;
     text-align: center;
     padding: 8px;
-    border-bottom: 3px solid #1a365d;
+    border-bottom: 3px solid var(--primary);
 }
