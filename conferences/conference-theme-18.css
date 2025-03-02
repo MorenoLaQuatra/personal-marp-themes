@@ -518,8 +518,6 @@ section {
     border: 1px solid #4299e1;
 }
 
-/* New additions for this presentation */
-
 /* Comparison tables */
 .comparison-table {
     width: 100%;
@@ -717,4 +715,25 @@ section {
 .hc-indicator {
     color: #38a169;
     font-weight: 500;
+}
+
+/* New additions for the updated presentation */
+
+/* Highlight table rows for results slides */
+.highlight-table tr.highlight-row {
+    background-color: #f0fff4;
+}
+
+.highlight-table tr.lowlight-row {
+    opacity: 0.5;
+}
+
+/* Key insight box for results slides */
+.key-insight {
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 20px;
 }
