@@ -165,7 +165,7 @@ td.worse {
     color: #c05621;
 }
 
-/* Images - REMOVED BORDERS AND SHADOWS */
+/* Images */
 img {
     max-width: 100%;
     height: auto;
@@ -298,12 +298,12 @@ blockquote {
     border-radius: 6px;
 }
 
-/* Math formatting - TRANSPARENT BACKGROUND */
+/* Math formatting */
 .math {
     font-family: 'Latin Modern Math', serif;
 }
 
-/* Equation container - TRANSPARENT BACKGROUND */
+/* Equation container */
 .equation-container {
     margin: 20px 0;
     padding: 10px;
@@ -516,4 +516,205 @@ section {
 .continuous-task {
     background-color: #ebf8ff;
     border: 1px solid #4299e1;
+}
+
+/* New additions for this presentation */
+
+/* Comparison tables */
+.comparison-table {
+    width: 100%;
+    font-size: 20px;
+}
+
+.comparison-table th {
+    background-color: #2c5282;
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+.comparison-table td {
+    padding: 8px;
+    text-align: center;
+}
+
+.comparison-table .highlight-cell {
+    background-color: #f0fff4;
+    font-weight: 500;
+}
+
+.comparison-table .low-value {
+    color: #e53e3e;
+    font-weight: 500;
+}
+
+.comparison-table .high-value {
+    color: #38a169;
+    font-weight: 500;
+}
+
+/* Model architecture box */
+.model-component {
+    background-color: #f7fafc;
+    border: 2px solid #3182ce;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.ddk-head {
+    background-color: #e6fffa;
+    border-color: #38b2ac;
+}
+
+.speech-head {
+    background-color: #ebf8ff;
+    border-color: #4299e1;
+}
+
+.backbone {
+    background-color: #edf2f7;
+    border-color: #2c5282;
+}
+
+/* Flow arrows */
+.arrow-down {
+    text-align: center;
+    font-size: 24px;
+    color: #3182ce;
+    margin: 5px 0;
+}
+
+.arrow-right {
+    display: inline-block;
+    color: #3182ce;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+/* Model diagram */
+.model-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Challenge boxes */
+.challenge-box {
+    background-color: #fffaf0;
+    border-left: 4px solid #ed8936;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+.solution-box {
+    background-color: #f0fff4;
+    border-left: 4px solid #38a169;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+/* Key results highlight */
+.key-result {
+    font-size: 32px;
+    font-weight: 500;
+    color: #2c5282;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Language indicators */
+.language-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.slovak {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+}
+
+.spanish {
+    background-color: #e6fffa;
+    color: #2c7a7b;
+}
+
+/* Data flow diagram */
+.data-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.data-node {
+    background-color: #edf2f7;
+    border: 2px solid #3182ce;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+}
+
+.data-arrow {
+    flex-grow: 1;
+    text-align: center;
+    color: #3182ce;
+    font-size: 24px;
+}
+
+/* Side-by-side comparison */
+.comparison-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.comparison-side {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.comparison-title {
+    font-weight: 500;
+    color: #2c5282;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Result highlight box */
+.result-highlight {
+    background-color: #f0fff4;
+    border: 2px solid #38a169;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.result-heading {
+    font-weight: 500;
+    color: #2c5282;
+    margin-bottom: 10px;
+}
+
+/* PD vs HC indicators */
+.pd-indicator {
+    color: #e53e3e;
+    font-weight: 500;
+}
+
+.hc-indicator {
+    color: #38a169;
+    font-weight: 500;
 }
