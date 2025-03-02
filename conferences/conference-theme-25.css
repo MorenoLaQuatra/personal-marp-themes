@@ -188,21 +188,6 @@ tr.dataset-2 {
   background-color: var(--secondary-light);
 }
 
-/* Dataset indicators for visibility */
-tr.dataset-1 td:first-child::before {
-  content: "▪";
-  color: var(--primary);
-  margin-right: var(--spacing-1);
-  font-weight: bold;
-}
-
-tr.dataset-2 td:first-child::before {
-  content: "▪";
-  color: var(--secondary);
-  margin-right: var(--spacing-1);
-  font-weight: bold;
-}
-
 /* Comparison table styles */
 .comparison-table th {
   background-color: var(--primary);
