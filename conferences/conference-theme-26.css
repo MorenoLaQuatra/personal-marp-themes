@@ -206,7 +206,7 @@ tr.dataset-2 {
 .comparison-table .high-value {
   color: var(--success);
   font-weight: 600;
-  background-color: rgba(67, 170, 139, 0.1);
+  /* background-color: rgba(67, 170, 139, 0.1); */
   padding: var(--spacing-1);
   border-radius: var(--border-radius-sm);
 }
@@ -214,7 +214,7 @@ tr.dataset-2 {
 .comparison-table .low-value {
   color: var(--danger);
   font-weight: 600;
-  background-color: rgba(214, 40, 40, 0.1);
+  /* background-color: rgba(214, 40, 40, 0.1); */
   padding: var(--spacing-1);
   border-radius: var(--border-radius-sm);
 }
