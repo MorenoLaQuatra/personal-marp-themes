@@ -543,18 +543,12 @@ section {
 
 .comparison-table .low-value {
     color: #e53e3e;
-    font-weight: 600;
-    background-color: rgba(229, 62, 62, 0.1);
-    padding: 2px 4px;
-    border-radius: 3px;
+    font-weight: 500;
 }
 
 .comparison-table .high-value {
     color: #38a169;
-    font-weight: 600;
-    background-color: rgba(56, 161, 105, 0.1);
-    padding: 2px 4px;
-    border-radius: 3px;
+    font-weight: 500;
 }
 
 /* Model architecture box */
@@ -728,12 +722,10 @@ section {
 /* Highlight table rows for results slides */
 .highlight-table tr.highlight-row {
     background-color: #f0fff4;
-    font-weight: 500;
-    opacity: 1;
 }
 
 .highlight-table tr.lowlight-row {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 /* Key insight box for results slides */
@@ -746,39 +738,68 @@ section {
     font-size: 20px;
 }
 
-/* Dataset indicators for comparison tables */
-.dataset-label {
-    font-size: 14px;
-    padding: 2px 6px;
-    border-radius: 3px;
+
+/* Dataset-specific row styles - more distinctive */
+tr.ewa-db {
+    border-left: 5px solid #3182ce;  /* Blue left border */
+}
+
+tr.pc-gita {
+    border-left: 5px solid #38b2ac;  /* Teal left border */
+}
+
+/* Row highlight states - maintain dataset colors while focusing */
+.highlight-table tr.highlight-row.ewa-db {
+    background-color: rgba(235, 248, 255, 0.8);  /* Light blue with opacity */
+    border-left: 5px solid #3182ce;
+}
+
+.highlight-table tr.highlight-row.pc-gita {
+    background-color: rgba(230, 255, 250, 0.8);  /* Light teal with opacity */
+    border-left: 5px solid #38b2ac;
+}
+
+.highlight-table tr.lowlight-row {
+    opacity: 0.35;  /* More dimmed for better contrast */
+}
+
+/* Add dataset indicators to maintain visibility when rows are lowlighted */
+tr.ewa-db td:first-child::before {
+    content: "▪";
+    color: #3182ce;
     margin-right: 5px;
-    display: inline-block;
-    font-weight: 500;
+    font-weight: bold;
 }
 
-.ewa-label {
-    background-color: rgba(66, 153, 225, 0.2);
-    color: #2b6cb0;
-    border: 1px solid #4299e1;
+tr.pc-gita td:first-child::before {
+    content: "▪";
+    color: #38b2ac;
+    margin-right: 5px;
+    font-weight: bold;
 }
 
-.pcgita-label {
-    background-color: rgba(56, 178, 172, 0.2);
+/* Enhanced value highlighting - make it pop more */
+.comparison-table .high-value {
     color: #2c7a7b;
-    border: 1px solid #38b2ac;
+    font-weight: 600;
+    background-color: rgba(56, 161, 105, 0.1);
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
-/* Dataset indicators for comparison tables */
-.comparison-table td:first-child {
-    position: relative;
-    padding-left: 15px !important;
+.comparison-table .low-value {
+    color: #c53030;
+    font-weight: 600;
+    background-color: rgba(229, 62, 62, 0.1);
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
-/* Dataset color indicators - left border */
-.comparison-table tr.ewa-db td:first-child {
-    border-left: 4px solid #4299e1 !important; /* Blue for EWA-DB */
-}
-
-.comparison-table tr.pc-gita td:first-child {
-    border-left: 4px solid #38b2ac !important; /* Teal for PC-GITA */
+/* Table header enhancement */
+.comparison-table th {
+    background-color: #2c5282;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 3px solid #1a365d;
 }
