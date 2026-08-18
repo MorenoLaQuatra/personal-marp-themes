@@ -1,0 +1,443 @@
+/* @theme academic-conferences */
+/* Author: Moreno La Quatra - minimal theme for academic conference talks */
+@import "default";
+
+/* ==========================================================================
+   Palette (muted, colorblind-friendly - Okabe-Ito inspired) + tokens
+   ========================================================================== */
+:root {
+  --ink: #1c2024;
+  --paper: #ffffff;
+  --muted: #5c6570;
+  --line: #e2e5ea;
+  --surface: #f7f8fa;
+
+  --blue: #2166ac;       /* definition / concepts */
+  --blue-bg: #eaf2fa;
+  --teal: #1b7a72;       /* examples */
+  --teal-bg: #e7f4f2;
+  --amber: #a3690a;      /* key takeaways */
+  --amber-bg: #fbf1df;
+  --plum: #7a5195;       /* notes / asides */
+  --plum-bg: #f2edf7;
+  --brick: #a13d3d;      /* warnings / pitfalls */
+  --brick-bg: #f8ecec;
+
+  --radius: 8px;
+  --gap: 20px;
+}
+
+/* ==========================================================================
+   Base slide
+   ========================================================================== */
+section {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.55;
+  padding: 48px 56px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+section::after {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+header, footer {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 18px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 18px 0 10px;
+}
+
+h4 {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 14px 0 8px;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+ul, ol {
+  margin: 0 0 14px 26px;
+  line-height: 1.6;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+li::marker {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+strong, b {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+em {
+  color: var(--muted);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* Native blockquote doubles as the "quote" component - no HTML needed */
+blockquote {
+  background: var(--surface);
+  border: none;
+  border-radius: var(--radius);
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  margin: 24px 40px;
+  padding: 34px 44px 28px;
+}
+
+blockquote > p {
+  margin: 0;
+}
+
+blockquote::before {
+  content: "\201C";
+  display: block;
+  font-style: normal;
+  font-size: 2.4em;
+  line-height: 1;
+  color: var(--blue);
+  opacity: 0.55;
+  margin-bottom: 6px;
+}
+
+/* Code */
+code {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  overflow: auto;
+  margin: 18px 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Tables - native markdown tables, no classes required.
+   Booktabs-style: rules only, no vertical lines, no cell fill. */
+table {
+  display: table;
+  width: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.82em;
+  border: none;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+table tr, table th, table td {
+  border: none !important;
+  background: none !important;
+}
+
+table th, table td {
+  padding: 12px 14px;
+  text-align: left;
+}
+
+table th {
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink) !important;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Title slide - apply with: <!-- _class: lead -->
+   ========================================================================== */
+section.lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.lead h1 {
+  font-size: 46px;
+}
+
+section.lead h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--blue);
+  margin: 16px auto 0;
+}
+
+section.lead .subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+section.lead .authors {
+  margin-top: 30px;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Section-divider slide - apply with: <!-- _class: section -->
+   Modifiers: section.teal / section.plum / section.amber
+   ========================================================================== */
+section.section {
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.section h1, section.section h2 {
+  color: #fff;
+  font-size: 42px;
+  margin: 0;
+}
+
+section.section.teal  { background: var(--teal); }
+section.section.plum  { background: var(--plum); }
+section.section.amber { background: var(--amber); }
+
+section.section header, section.section footer, section.section::after {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================================================
+   Semantic boxes: definition / example / important / warning / note
+   Use whole-slide (zero HTML): <!-- _class: definition -->
+   Use inline (one wrapper, alongside other content): <div class="definition">
+   A tinted background plus a color-matched heading are the only cues -
+   no border, no badge, no icon.
+   ========================================================================== */
+section.definition, div.definition { --box: var(--blue);  --box-bg: var(--blue-bg); }
+section.example,    div.example    { --box: var(--teal);  --box-bg: var(--teal-bg); }
+section.important,  div.important  { --box: var(--amber); --box-bg: var(--amber-bg); }
+section.warning,    div.warning    { --box: var(--brick); --box-bg: var(--brick-bg); }
+section.note,       div.note       { --box: var(--plum);  --box-bg: var(--plum-bg); }
+
+section.definition, section.example, section.important, section.warning, section.note,
+div.definition, div.example, div.important, div.warning, div.note {
+  background: var(--box-bg);
+}
+
+div.definition, div.example, div.important, div.warning, div.note {
+  border-radius: var(--radius);
+  padding: 20px 24px 6px;
+  margin: 14px 0;
+}
+
+:is(section.definition, section.example, section.important, section.warning, section.note,
+    div.definition, div.example, div.important, div.warning, div.note) :is(h2, h3) {
+  color: var(--box);
+}
+
+/* ==========================================================================
+   Layout utilities
+   ========================================================================== */
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); align-items: start; }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); align-items: start; }
+.cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: start; }
+
+.center { text-align: center; }
+.small  { font-size: 18px; }
+.muted  { color: var(--muted); }
+
+/* Figures - native <figure>/<figcaption>, no extra div needed */
+figure {
+  text-align: center;
+  margin: 16px 0;
+}
+
+figure img {
+  max-width: 88%;
+  border-radius: 6px;
+}
+
+figcaption {
+  font-size: 16px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   Results / metrics
+   ========================================================================== */
+.stats {
+  display: flex;
+  gap: var(--gap);
+  margin: 18px 0;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 12px;
+}
+
+.stat h3 {
+  font-size: 32px;
+  color: var(--blue);
+  margin: 0 0 4px;
+}
+
+.stat p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Inline value emphasis for results tables - pair color with a glyph */
+.value-high {
+  color: var(--teal);
+  font-weight: 700;
+}
+.value-high::after { content: " \25B2"; font-size: 0.75em; }
+
+.value-low {
+  color: var(--brick);
+  font-weight: 700;
+}
+.value-low::after { content: " \25BC"; font-size: 0.75em; }
+
+/* ==========================================================================
+   Closing / contact slide
+   ========================================================================== */
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 28px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.contacts a {
+  color: var(--blue);
+}
+
+/* Speaker / author cards - drop as many as you need inside .cols-2 / .cols-3 */
+.author-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  text-align: center;
+}
+
+.author-card h3 {
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.author-card p {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.author-card a {
+  font-size: 15px;
+}
+
+/* QR cards for paper / code / slides links - place inside .qr-row */
+.qr-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin: 24px 0;
+}
+
+.qr-card {
+  text-align: center;
+}
+
+.qr-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.qr-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   Text color utilities (use sparingly, matching the box palette)
+   ========================================================================== */
+.text-blue  { color: var(--blue); }
+.text-teal  { color: var(--teal); }
+.text-amber { color: var(--amber); }
+.text-plum  { color: var(--plum); }
+.text-brick { color: var(--brick); }
