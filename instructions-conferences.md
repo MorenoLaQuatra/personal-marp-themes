@@ -1,7 +1,6 @@
 # academic-conferences theme: agent instructions
 
-Context for a coding agent generating Marp slide decks with the
-`academic-conferences` theme.
+Context for a coding agent generating Marp slide decks with the `academic-conferences` theme.
 Read this before writing or editing any `.md` deck that uses it.
 
 ## What this theme is for
